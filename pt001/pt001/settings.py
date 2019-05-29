@@ -53,9 +53,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
 ]
 
-SITE_ID = 1
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -207,8 +204,14 @@ STATICFILES_DIRS = [
     os.path.join(os.path.dirname(BASE_DIR), "static"),
 ]
 
-LOGIN_URL='login'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL='accounts/login'
+#LOGIN_REDIRECT_URL =
+LOGOUT_REDIRECT_URL = 'accounts/login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#django-allauth
+SITE_ID = 1
+
+#django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
