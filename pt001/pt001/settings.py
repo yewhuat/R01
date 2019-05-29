@@ -200,9 +200,27 @@ LOCALE_PATHS = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_URL = '/static/'
+#STATICFILES_DIRS = [
+#    os.path.join(os.path.dirname(BASE_DIR), "static"),
+#]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(os.path.dirname(BASE_DIR), "static"),
+    os.path.join(BASE_DIR, 'site_static'),
 ]
+
+if os.environ.get('STATIC_HOST'):
+    STATIC_DOMAIN = os.environ.get('STATIC_HOST')
+    STATIC_URL = 'http://%s/' % STATIC_DOMAIN
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if os.environ.get('MEDIA_HOST'):
+    MEDIA_DOMAIN = os.environ.get('MEDIA_HOST')
+    MEDIA_URL = 'http://%s/' % MEDIA_DOMAIN
+
+UPLOAD_URL = f'{MEDIA_URL}upload/'
+UPLOAD_ROOT = os.path.join(MEDIA_ROOT, 'upload')
+
 
 LOGIN_URL='accounts/login'
 #LOGIN_REDIRECT_URL =
