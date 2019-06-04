@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # Internal App
+    'profiles',
     # Admin Interface
     'django.contrib.admin',
 ]
@@ -223,7 +224,7 @@ UPLOAD_ROOT = os.path.join(MEDIA_ROOT, 'upload')
 
 
 LOGIN_URL='accounts/login'
-#LOGIN_REDIRECT_URL =
+LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'accounts/login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
