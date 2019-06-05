@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
     url('', TemplateView.as_view(template_name='home.html'), name='home'),
-    url('', include('profiles.urls')),
+    url('', include('profiles.urls', namespace='profile')),
 ]
 
 if settings.DEBUG:

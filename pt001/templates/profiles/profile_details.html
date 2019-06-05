@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
       <div class="media">
@@ -9,6 +8,7 @@
           <p class="text-secondary">{{ user.email }}</p>
         </div>
       </div>
-      <!-- FORM HERE -->
+      <h2>{{ user.email }}</h2>
+      <h3>{{ user.username }}</h3>
     </div>
 {% endblock content %}
